@@ -1,11 +1,9 @@
 import cv2
 from insightface.app import FaceAnalysis
 
-# 얼굴 분석기 준비 (처음 실행 시 모델 자동 다운로드, 시간 좀 걸릴 수 있음)
 app = FaceAnalysis(providers=['CPUExecutionProvider'])
 app.prepare(ctx_id=0)
 
-# 웹캠 열기
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -26,4 +24,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
